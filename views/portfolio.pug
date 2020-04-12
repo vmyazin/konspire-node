@@ -1,0 +1,101 @@
+extends layout
+
+block content
+  //- <body class="{{page_settings.body_class}}-body">
+
+  include partials/header
+  
+  <div class="wrapper">
+  
+    <section class="content portfolio-page" id="content">
+      
+      <article id="portfolio" class="generic-article">
+        <hgroup>
+          <h1>Our Portfolio<div class="corner-left"></div></h1>
+          <h2>These are featured samples of our work. Enjoy!</h2>
+        </hgroup>
+        <div class="clearfix"></div>
+    
+        <nav id="portfolio-nav">
+          <a href="javascript:void(0)" class="prev">Prev.</a>
+          <ul>
+            <li><img src="/images/portfolio/mini-thumbs/thmb-hallass-sm.jpg" width="48" height="48" alt="Thumb Hallass"></li>
+            <li><img src="/images/portfolio/mini-thumbs/thmb-moving-sm.jpg" width="48" height="48" alt="Thumb Moving Quotes"></li>
+            <li><img src="/images/portfolio/mini-thumbs/thmb-npp-sm.jpg" width="48" height="48" alt="Thumb National Payment Provider"></li>
+            <li><img src="/images/portfolio/mini-thumbs/thmb-purplepen-sm.jpg" width="48" height="48" alt="Thumb Purple Pen"></li>
+            <li><img src="/images/portfolio/mini-thumbs/thmb-elena-sm.jpg" width="48" height="48" alt="Thumb Elena Dobryakova Personal Blog"></li>
+            <li><img src="/images/portfolio/mini-thumbs/thmb-color-sm.jpg" width="48" height="48" alt="Thumb Color.com Concept"></li>
+            <li><img src="/images/portfolio/mini-thumbs/thmb-occ-sm.jpg" width="48" height="48" alt="Thumb OC Collision Center"></li>
+            <li><img src="/images/portfolio/mini-thumbs/thmb-harryp-sm.jpg" width="48" height="48" alt="Thumb Harry Potter Park Fan Site"></li>
+            <li><img src="/images/portfolio/mini-thumbs/thmb-zarpas-sm.jpg" width="48" height="48" alt="Thumb Zarpas Personal Trainer"></li>
+          </ul>
+          <a href="javascript:void(0)" class="next">Next</a>
+          <div class="clearfix"></div>
+        </nav>
+
+        <figure id="portfolio-pieces">
+          <ul>
+            <li>
+              <h3>Hallass Online Store. <span>Layout design.</span></h3>
+              <img src="/images/portfolio/previews/prv-hallass.jpg" width="590" height="648" alt="Prv Hallass">
+            </li>
+            <li>
+              <h3>Moving Quotes. <span>Layout design.</span></h3>
+              <img src="/images/portfolio/previews/prv-moving.jpg" width="590" height="648" alt="Prv Moving">
+            </li>
+            <li>
+              <h3>National Payment Provider. <span>Layout design concept.</span></h3>
+              <img src="/images/portfolio/previews/prv-npp.jpg" width="590" height="648" alt="Prv Npp">
+            </li>
+            <li>
+              <h3>Purple Pen Blog. <span>WordPress theme comp design.</span></h3>
+              <img src="/images/portfolio/previews/prv-purplepen.jpg" width="590" height="648" alt="Prv Purplepen">
+            </li>
+            <li>
+              <h3>Blog of Elena Dobryakova. <span>WordPress theme.</span></h3>
+              <img src="/images/portfolio/previews/prv-elena.jpg" width="590" height="648" alt="Prv Elena">
+            </li>
+            <li>
+              <h3>Color.com. <span>Layout design concept.</span></h3>
+              <img src="/images/portfolio/previews/prv-color.jpg" width="590" height="648" alt="Prv Color">
+            </li>
+            <li>
+              <h3>OC Collision Center. <span>Layout design concept.</span></h3>
+              <img src="/images/portfolio/previews/prv-occ.jpg" width="590" height="648" alt="Prv Occ">
+            </li>
+            <li>
+              <h3>Harry Potter Park Fan Blog. <span>WordPress theme.</span></h3>
+              <img src="/images/portfolio/previews/prv-harryp.jpg" width="590" height="648" alt="Prv Harryp">
+            </li>
+            <li>
+              <h3>Zarpas Training. <span>WordPress theme.</span></h3>
+              <img src="/images/portfolio/previews/prv-zarpas.jpg" width="590" height="648" alt="Prv Zarpas">
+            </li>
+          </ul>
+        </figure>
+      </article>
+      
+      <aside class="yellow-col">
+        <h4>Briefly About Us</h4>
+          <div class="inner">
+            <p><strong>Konspire Design is a boutique interactive design studio based in New York City. It&rsquo;s run by user experience designer and front-end engineer Vasily Myazin. Other collaborators are brought on to work on bigger projects, as needed.</strong></p>
+        
+          <h5>Are you a Start-Up?</h5>
+          <p>We can help you with wireframes, a functional web project prototype (using HTML+CSS+JS), user interface design and implementation.</p>
+
+          <h5>Mom &rsquo;n&rsquo; Pop Shop?</h5>
+          <p>Mini-site for small to medium businesses from scratch. Facelift for existing web sites. Basic Search Engine Optimization.</p>
+
+          <h5>Blogger?</h5>
+          <p>We will set up WordPress or other popular blogging platforms for you. Custom functionality and themes.</p>
+        
+          <p>We currently accept new projects.</p>
+          <p><a href="javascript:void(0)" class="show-contact-bubble hidden-xs hidden-sm">Tell us about your needs.</a></p>
+        </div>        
+      </aside>
+
+    </section> <!-- /content -->
+  </div>
+
+
+  include partials/footer

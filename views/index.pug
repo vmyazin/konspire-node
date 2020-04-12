@@ -3,7 +3,74 @@ extends layout
 block content
   include partials/header
   
-  h2= title
-  p Welcome to #{title}!!!
+  <section class="short-desc">
+    <article>
+      <figure class="man" id="man-left"></figure>
+      <h2>We are a small web design and development shop. <strong>We build websites</strong> of various complexity providing <strong>simple user interfaces</strong> for <strong>smartphones, tablets, and PCs.</strong></h2>
+      <h3>UI/UX design, front-end (CSS, HTML, JS) and back-end (Rails, PHP), open source and custom CMSs.</h3>
+      <figure class="man" id="man-right"></figure>
+      <figure id="light-switch"></figure>
+    </article>
+  </section>
+
+  <div class="wrapper">   
+    <section id="photo-slideshow" class="hidden-xs">
+      <figure></figure>
+      <!-- <img src="/images/photo-love.jpg" width="950" height="282" alt="Photo Topanga"> -->
+      <div class="shadow-bottom hidden-xs hidden-sm"></div>
+      <div class="corner-left hidden-xs hidden-sm"></div>
+      <div class="corner-right hidden-xs hidden-sm"></div>
+    </section>
+
+    <section class="content" id="content">
+      <div class="content-wrapper">
+        <aside id="main-left">
+          <h2>A Few Words</h2>
+          <p>We are a small shop specializing in making easy to use, accessible, and mobile-friendly websites for individuals and small to medium businesses.</p>
+          <p class="p-2">Lost in terminology? Not to worry—we speak Human to our clients.</p>
+
+          <blockquote>
+            <p>Konspire Design is a great design and graphics company that is fast, responsive, reliable and effective in executing our marketing goals.</p>
+            <p class="sig"><em>&mdash;Peter Onsmark, Filmbudget.com</em></p>
+          </blockquote>
+
+          <p>Our agency uses common modern technologies, such as WordPress&mdash;blogging engine and content management system, and jQuery framework for client-side interactivity.</p>
+          <p><abbr class="tooltip" title="If you choose to work with a different developer or agency down the road, they should be able to build on top of our work without a problem.">Why you should care</abbr></p>
+        </aside>
+        <section id="portfolio-reel">
+          <h3>Featured Work</h3>
+          <ul>
+            <li>
+              <img class="pf-thumb" src="/images/portfolio/thumbs/thmb-occol.jpg" alt="Thumbnail">
+            </li>
+            <li>
+              <img class="pf-thumb" src="/images/portfolio/thumbs/thmb-hallass.jpg" alt="Thmb Hallass">
+            </li>
+            <li>
+              <img class="pf-thumb" src="/images/portfolio/thumbs/thmb-col-mod.jpg" alt="Thmb Col Mod">
+            </li>
+            <li>
+              <img class="pf-thumb" src="/images/portfolio/thumbs/thmb-moving.jpg" alt="Thmb Moving">
+            </li>
+          </ul>
+          <div class="clearfix"></div>
+        </section>
+      </div>
+
+      <aside id="main-right">
+        <article id="five-reasons" class="yellow-col">
+          <h4>5 Reasons to Hire Us For Your Next Project</h4>
+          <ol>
+            <li><p>We are genuinely passionate about good user experience.</p></li>
+            <li><p>We are fun-loving people and like to do good work.</p></li>
+            <li><p>We can build a custom (and customizable) <abbr class="tooltip" title="Content Management System">CMS</abbr> or a blog engine for you from scratch.</p></li>
+            <li><p>We use common open web technologies and follow web standards, staying away from obscure proprietary solutions.</p></li>
+            <li><p>We are up for small gigs, like adding an interactive form to a site, mocking up a design, creating wireframes, enhancing user interface and other awesome things of that nature.</p></li>
+          </ol>
+        </article>
+      </aside>
+
+    </section> <!-- /content -->
+  </div>
 
   include partials/footer

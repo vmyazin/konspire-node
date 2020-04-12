@@ -1,2 +1,35 @@
 block content
-  p Footer
+  footer.main-footer
+    .copy &copy; 2008-2020 Konspire Design
+    nav
+      ul
+        li
+          a(href='/about') About
+        li
+          a.show-contact-bubble.hidden-xs.hidden-sm(href='javascript:void(0)') Contact
+        li
+          a.hidden-lg(href='mailto:vm@konspiredesign.com?Subject=Inquiry%20about%20web%20design') Contact
+    .clearfix
+
+  link(href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css')
+  link(href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css')
+  // <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+
+  //- script(type='text/javascript' src='/js/jquery-2.1.0.min.js')
+  script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
+  script(type='text/javascript' src='/js/jquery.hoverIntent.js')
+  script(type='text/javascript' src='/js/jquery.backgroundPosition.js')
+  script(src='/js/jquery.cross-slide.js' type='text/javascript' charset='utf-8')
+  script(src='/js/jquery.cookie.js' type='text/javascript' charset='utf-8')
+  script(src='/js/shortcut.js' type='text/javascript' charset='utf-8')
+  script(src='/js/jquery.scrollpane.js' type='text/javascript' charset='utf-8')
+  script(src='/js/jquery.mousewheel.js' type='text/javascript' charset='utf-8')
+  script(src='/js/jquery.tooltipster.min.js' type='text/javascript' charset='utf-8')
+  script(src='/js/konspire.js' type='text/javascript' charset='utf-8')
+  script.
+    $(function() {
+      $('.tooltip').tooltipster({
+        'maxWidth': '300'
+      });
+      // $('#portfolio-reel ul').jScrollPane({scrollbarWidth: 14, wheelSpeed: 12});
+    })

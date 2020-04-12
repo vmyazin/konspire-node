@@ -1,0 +1,873 @@
+/*
+   main.css
+   Konspire Design v.2.1
+   
+   Created by Vasily Myazin on 2010-05-12.
+   Update on 2020-04-12
+   Copyright 2010-2020 Konspire Design. All rights reserved.
+*/
+
+/* HTML5 tags */
+header, section, footer,
+aside, nav, article, figure {
+	display: block;
+}
+
+body {
+  background: #D3CEBB url('/images/bg-main.jpg') repeat;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, Tahoma, sans-serif;
+	font-size: 15px;
+	line-height: 1.4286;	/* 20px Baseline grid */
+	color: #282828;
+}
+.access {
+  left:-3000px;
+  position:absolute;
+  z-index: 2000;
+}
+.access:focus {
+  left: 0;
+  padding: 5px 1em;
+  font-size: 2em;
+  background: white;
+}
+
+/* General */
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+}
+.text-center {
+  text-align: center;
+}
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+@media (min-width: 701px) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
+
+abbr {
+  border-bottom: 1px dotted #444;
+  color: #777;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  font-weight: 700;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+h3 { font-size: 1.8em; }
+
+.content a {
+  color: #726f04;
+}
+
+a:hover {
+  text-decoration: none;
+}
+.content p {
+  margin-bottom: 1em;
+}
+abbr {
+  cursor: help;
+}
+.generic-article {
+  width: 610px;
+  margin: 0 30px;
+}
+.polaroid-a {
+  border: 6px white solid;
+  box-shadow: 0px 0px 10px rgba(0,0,0,.4);
+}
+
+/* Header */
+
+.main-header {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 2px solid #898480;
+}
+.header-wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+  position: relative;
+  overflow: visible;
+}
+.main-header h1 {
+  position: relative;
+  a {
+    display: block;
+  }
+  img {
+    display: inline-block;
+    margin-left: -111px;
+  }
+}
+
+#bg-helper {
+  position: absolute;
+  background: url('/images/header-gfx.png') no-repeat top right;
+  width: 744px;
+  height: 186px;
+  top: 0;
+  right: -85px;
+  z-index: -1;
+}
+.main-header .main-nav {
+  position: absolute;
+  bottom: 42px;
+  right: -380px;
+}
+.main-nav ul {
+  background: url('/images/bg-nav-spr-left.png') no-repeat left top;
+  padding-left: 20px;
+  overflow: hidden;
+  float: left;
+}
+.main-nav ul li {
+  float: left;
+  background: url('/images/bg-nav-spr-mid.png') no-repeat right top;
+  padding-right: 20px;
+}
+.main-nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font: 1.7em 'Yanone Kaffeesatz', arial, serif;
+  background: url('/images/bg-nav.png') repeat-x;
+  line-height: .65;
+  height: 20px;
+  padding: 8px 12px 8px 2px;
+  text-shadow:0 1px 0 rgba(0,0,0, 0.5);
+}
+.main-nav ul li a:hover {
+  color: #160e2a;
+  text-shadow: 0 -1px 0 rgba(255,255,255, 0.5);
+}
+#nav-helper {
+  background: url('/images/bg-nav.png') repeat-x;
+  float: left;
+  height: 35px;
+  width: 390px;
+}
+.index-body #nav-home,
+.about-body #nav-about,
+.portfolio-body #nav-portfolio,
+.main-header li a.active,
+.main-header li a.active:hover {
+  color: #f4ed65;
+  text-shadow: 0 1px 0 rgba(0,0,0, 0.5);
+}
+body .main-header ul li a.suppress {
+  color: #fff !important;
+  text-shadow:0 1px 0 rgba(0,0,0, 0.5) !important;
+}
+
+/* Mobile Nav */
+
+.nav-toggle-wrapper {
+  width: 40%;
+  top: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+#nav-toggle {
+  position: absolute;
+  right: 15px;
+  top: 47%;
+  z-index: 3;
+}
+
+#nav-toggle { cursor: pointer; padding: 10px 35px 16px 0px; }
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #283c69;
+  position: absolute;
+  display: block;
+  content: '';
+}
+#nav-toggle span:before {
+  top: -10px; 
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  transition: all 500ms ease-in-out;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before,
+#nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background: #fff;
+}
+#nav-toggle.active span:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  background: #fff;
+}
+.mobile-nav {
+  position: absolute;
+  top: 80px;
+  left: 50px;
+  right: 50px;
+  z-index: 3;
+  display: none;
+}
+.mobile-nav ul li a {
+  font-size: 25px;
+  text-align: center;
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,.85);
+  z-index: 2;
+  display: none;
+}
+
+/* Artsy stripe */
+
+.short-desc {
+  background: #243861;
+  overflow: hidden;
+  box-shadow: inset 0 0 20px rgba(0,0,0,.7);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.short-desc.lit {
+  background: #AF4605;
+}
+.short-desc article {
+  position: relative;
+  margin: 0 auto;
+  padding: 30px 0 0;
+  max-width: 980px;
+}
+.short-desc h2 {
+  color: #deebeb;
+  font-size: 1.9em;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  padding: 0 63px 0 15px;
+}
+.short-desc h2 strong {
+  color: #fff;
+}
+.short-desc h2 em {
+  font-style: normal;
+  font-size: .75em;
+}
+.short-desc.lit h2 {
+  color: #FFDAC4;
+}
+.short-desc h3 {
+  color: #f4ed65;
+  font-size: 1.4em;
+  padding: 0 15px 60px;
+  position: relative;
+  z-index: 1;
+}
+.man {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  height: 206px;
+}
+#man-left {
+  background: url('/images/man-left.png') no-repeat;
+  width: 372px;
+  left: -272px;
+}
+#man-right {
+  background: url('/images/man-right.png') no-repeat;
+  width: 372px;
+  right: -322px;
+}
+#light-switch {
+  width: 38px;
+  height: 40px;
+  background: url('/images/light-switch.png') no-repeat;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.lit #light-switch {
+  background: url('/images/light-switch.png') no-repeat 0 -40px;
+}
+
+
+.wrapper {
+  width: 980px;
+  margin: 0 auto;
+  position: relative;
+}
+#photo-slideshow {
+  width: 980px;
+  height: 312px;
+  margin: -45px 0 0;
+  position: relative;
+  padding-bottom: 13px;
+}
+#photo-slideshow img,
+#photo-slideshow figure {
+  border: 15px solid #fff;
+  max-width: 10000px;
+}
+#photo-slideshow figure {
+  width: 950px;
+  height: 282px;
+  background: #ddd;
+}
+.shadow-bottom {
+  background-image: linear-gradient(0deg, #FFFFFF 0%, #E1E1E1 100%);
+  height: 14px;
+  margin: 0 15px 0 14px;
+}
+.corner-left,
+.corner-right {
+  width: 15px;
+  height: 13px;
+  position: absolute;
+  bottom: 0;
+  background: url('/images/corners.png');
+}
+.corner-left {
+  background-position: left top;
+  left: 0;
+}
+.corner-right {
+  background-position: -15px top;
+  right: -1px;
+}
+
+.content {
+  width: 951px;
+  margin: 0 auto;
+  position: relative;
+  background: #fff;
+}
+.content h2 {
+  color: #507c66;
+  font-size: 1.5em;
+}
+#main-left h2 {
+  background: rgba(255, 253, 201, 0.7);
+  line-height: 28px;
+  margin: 0 45% 1em -43px;
+  padding: 5px 10px 5px 43px;
+  box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.content aside {
+  float: left;
+}
+#main-left {
+  margin: 10px 325px 0 0;
+  max-width: 280px;
+  min-height: 555px;
+}
+#main-left .p-2 {
+  padding-left: 2em;
+  color: #596391;
+  font-family: "Hoefler Text", Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+  font-size: 1.1em;
+  font-style: oblique;
+}
+#main-left .p-3 { padding-left: 4em; }
+.tech-logos {
+  background: url('/images/tech-logos.jpg') no-repeat left top;
+}
+#main-left blockquote {
+  padding-left: 2em;
+  background: url('/images/bq-open-quote.png') no-repeat left top, url('/images/bq-close-quote.png') no-repeat right bottom;
+}
+blockquote p {
+  color: #4c4a00;
+  font-size: 17px;
+}
+blockquote .sig {
+  font-size: 100%;
+  text-align: right;
+}
+.content-wrapper {
+  background: white;
+  padding: 0 30px 30px;
+  display: inline-block;
+}
+.yellow-col {
+  position: absolute;
+  right: -9px;
+  top: 10px;
+  background: #f7f288;
+  width: 305px;
+}
+#main-right ol {
+  overflow: hidden;
+  padding: 10px 20px 20px;
+}
+#main-right ol li {
+  margin-bottom: 10px;
+  margin-left: 30px;
+  list-style-type: decimal;
+  color: #75732d;
+  font-weight: 700;
+  font-size: 17px;
+}
+#main-right ol li p {
+  font-size: 15px;
+	color: #282828;
+	font-weight: normal;
+	margin: 0;
+}
+aside h4 {
+  color: #4c4a00;
+  font-size: 1.6em;
+  line-height: 1.1em;
+  background: #fcf9c0 url('/images/bg-yheader.png') repeat;
+  padding: 10px 20px;
+}
+#portfolio-reel {
+  width: 290px;
+  position: absolute;
+  top: -105px;
+  bottom: 15px;
+  left: 325px;
+  z-index: 2;
+  background: white;
+  min-height: 200px;
+  padding: 20px;
+  overflow: hidden;
+}
+#portfolio-reel h3 {
+  color: #596391;
+  text-align: center;
+}
+#portfolio-reel ul li {
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.pf-thumb {
+  border: 4px solid #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,.4);
+  margin: 0;
+  max-width: 100%;
+  display: inline-block;
+}
+
+/* Portfolio */
+
+.wrapper .portfolio-page,
+.wrapper .about-page {
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+hgroup {
+  display: inline-block;
+}
+.portfolio-page h1 {
+  color: #596391;
+  font-size: 1.8em;
+  float: left;
+  background: rgba(255,253,201,.7);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+  padding: 5px 10px 5px 43px;
+  line-height: 36px;
+  margin-left: -45px;
+  margin-right: 15px;
+  position: relative;
+}
+.portfolio-page h3 {
+  clear: both;
+}
+#portfolio h2 {
+  font-size: 1.1em;
+  font-weight: 300;
+}
+#portfolio h3 {
+  color: #596391;
+  font-weight: normal;
+  margin: 10px 0;
+  line-height: 0.9em;
+  text-align: left;
+}
+#portfolio h3 span {
+  color: #606060;
+  font-size: .8em;
+  font-family: "Hoefler Text", Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+}
+
+.wrapper .portfolio-page hgroup h2 {
+  color: #4c4a00;
+  font-family: "Hoefler Text", Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+  font-weight: normal;
+  font-size: 1em;
+  display: inline;
+  float: right;
+  font-style: italic;
+  position: relative;
+  top: 12px;
+}
+
+#portfolio-pieces ul {
+  height: 718px;
+}
+#portfolio-pieces li {
+  background: #fff;
+  border-color: white;
+  border-style: solid;
+  border-width: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,.4);
+  margin-bottom: 20px;
+  text-align: center;
+}
+.portfolio-page .corner-left {
+  font-size: 0;
+  bottom: -13px;
+}
+
+.portfolio-page aside {
+  width: 280px;
+  position: absolute;
+  top: 30px;
+  right: -10px;
+  line-height: 1.33em;
+}
+.portfolio-page aside h5 {
+  font-size: 1.3em;
+  color: #2c3871;
+  margin-bottom: .3em;
+}
+aside .inner {
+  padding: 8px 20px 20px;
+}
+.portfolio-page aside p {
+  font-size: .9em;
+}
+#portfolio-nav {
+  display: none;
+  overflow: hidden;
+  margin: 10px 0 15px;
+  padding-top: 5px;
+}
+#portfolio-nav li {
+  float: left;
+  margin-right: 9px;
+  margin-bottom: 9px;
+  cursor: pointer;
+}
+#portfolio-nav li.active {
+  margin-bottom: 0;
+}
+#portfolio-nav li img {
+  border: 2px solid white;
+  box-shadow: 0px 0px 10px rgba(0,0,0,.4);
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+}
+#portfolio-nav li:last-child {
+  margin-right: 0;
+}
+#portfolio-nav li.active img {
+  border-width: 4px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,.4);
+}
+
+.prev,
+.next {
+  background: url('/images/kd-sprites.png');
+  height: 20px;
+  width: 14px;
+  margin: 17px 12px 0;
+  text-indent: -4000px;
+  float: left;
+}
+.prev {
+  background-position: left -18px;
+}
+.next {
+  background-position: -17px -18px;
+  margin-right: 0;
+}
+.prev.disabled {
+  background-position: left 0;
+}
+.next.disabled {
+  background-position: -17px 0;
+}
+/* About */
+
+.wrapper .about-page {
+  overflow: hidden;
+  background-color: #fff;
+  background-image: url('/images/bg-stamp.png'), url('/images/bg-grungy.png'), url('/images/bg-stain.jpg');
+  background-position: top left, top right, bottom right;
+  background-repeat: no-repeat;
+  
+}
+#about-konspire h1 {
+  color: #596391;
+  font-size: 1.7em;
+}
+#about-konspire h1,
+#about-konspire h2 {
+  margin-bottom: .3em;
+}
+
+#about-konspire {
+  position: absolute;
+  width: 350px;
+  left: 310px;
+}
+#about {
+  float: left;
+}
+.about-page #main-left {
+  margin-top: 320px;
+  position: relative;
+}
+#photo-vasily {
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+#twitter-blurb {
+  background: url('/images/twit-bubble.png') no-repeat;
+  width: 90px;
+  height: 75px;
+  position: absolute;
+  top: 215px;
+  text-align:center;
+  padding: 45px 18px 0;
+  font: 1em "Hoefler Text", Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+  font-style: oblique;
+  line-height: 1.3em;
+  letter-spacing: -.02em;
+}
+#twitter-blurb a {
+  color: #0d2e3e;
+  text-decoration: none;
+}
+#twitter-blurb a:hover span {
+  background: #26b3e0;
+}
+#twitter-blurb span {
+  background: white;
+  font-weight:700;
+  padding:3px 4px 0;
+}
+#flickr-feed {
+  margin: 0 0 0 40px;
+  position: relative;
+}
+
+#flickr-feed h2 {
+  color: #78b9d2;
+}
+#flickr-feed h2 span {
+  color: #00aeef;
+}
+#flickr-feed h2 span b {
+  color: #ff00ff;
+}
+
+.album-wrapper ul {
+  margin: 20px 20px 0 0;
+  width: 221px;
+
+  li {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    text-align: center;
+
+    img {
+      border: 3px solid white;
+      box-shadow: 0px 0px 10px rgba(0,0,0,.4);
+    }
+  }
+}
+
+.album-wrapper a {
+  display: block;
+  margin-bottom: 20px;
+}
+#flickr-rss {
+  position: absolute;
+  right: 20px;
+  top: 5px;
+}
+
+/* Contact */
+
+#contact-bubble {
+  background: url('/images/contact-bubble.png') no-repeat;
+  width: 415px;
+  height: 220px;
+  position: absolute;
+  top: -50px;
+  right: -15px;
+  display: none;
+  z-index: 10;
+}
+#contact-bubble p {
+  margin: 90px 0 0 53px;
+  font-size: 1.3em;
+  font-family: "Hoefler Text", Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+}
+#contact-bubble p a {
+  display: inline-block;
+  margin-left: 40px;
+  color: #1951c6;
+  font-family: 'Open Sans', Helvetica, Arial, Tahoma, sans-serif;
+}
+#contact-bubble .close {
+  background: url('/images/kd-sprites.png') -34px top;
+  position: absolute;
+  top: 52px;
+  right: 16px;
+  width: 15px;
+  height: 15px;
+  text-indent: -4000px;
+  cursor: pointer;
+}
+
+
+/* Footer */
+
+.main-footer {
+  clear: left;
+  display:block;
+  height:20px;
+  margin: 0 0px 20px;
+  background: url('/images/content-btm.png') no-repeat center top;
+  padding-top: 50px;
+}
+
+.main-footer .copy {
+  color: #5e535a;
+  float: left;
+  margin: 0 0 0 45px;
+}
+.main-footer nav {
+  float: right;
+  margin: 0 45px 0 0;
+}
+.main-footer nav li {
+  float: left;
+  margin: 0 0 0 20px;
+}
+.main-footer nav li a {
+  color: #3442a9;
+}
+
+/* Scrollbar */
+
+
+.jScrollPaneContainer {
+  background: -moz-linear-gradient(19% 95% 90deg,#CFCFCF, #FFFFFF);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#CFCFCF));
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+  margin-bottom: 10px;
+  outline: none;
+  border-radius: 5px;
+}
+
+.jScrollPaneTrack {
+	position: absolute;
+	cursor: pointer;
+	right: 0;
+	top: 0;
+	height: 100%;
+	background: #e1e1e1;
+  border-radius: 4px;
+}
+.jScrollPaneDrag {
+	position: absolute;
+	background: #a7a7a7;
+	cursor: pointer;
+	overflow: hidden;
+  border-radius: 4px;
+}
+.jScrollPaneDragTop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+.jScrollPaneDragBottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+}
+a.jScrollArrowUp {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	text-indent: -2000px;
+	overflow: hidden;
+	/*background-color: #666;*/
+	height: 9px;
+}
+a.jScrollArrowUp:hover {
+	/*background-color: #f60;*/
+}
+
+a.jScrollArrowDown {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	right: 0;
+	text-indent: -2000px;
+	overflow: hidden;
+	/*background-color: #666;*/
+	height: 9px;
+}
+
+/* Tooltips */
+
