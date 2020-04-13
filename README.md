@@ -1,5 +1,5 @@
 # simple-express-site
-Simple static website foundation built with ExpressJS, Pug, Sass
+A web design agency site built with ExpressJS, Pug, Sass
 
 How to get going:
 
