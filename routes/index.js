@@ -7,11 +7,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/about', (req, res) => {
-  res.render('about');
+  res.render('about', { title: 'About Konspire Design' });
 });
 
 router.get('/portfolio', (req, res) => {
-  res.render('portfolio');
+  res.render('portfolio', { title: 'Portfolio Konspire Design' });
 });
 
 module.exports = router;
