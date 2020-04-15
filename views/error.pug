@@ -1,6 +1,18 @@
-extends layout
+extends layout-error
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  include partials/header
+
+  .wrapper
+    section#content.content
+
+      article.generic-article
+  
+        h2 Error #{error.status}: Page #{message}
+        p
+        hr
+        p
+        pre #{error.stack}
+    
+  include partials/footer
+

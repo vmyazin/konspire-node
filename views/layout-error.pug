@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+  head
+    meta(http-equiv='Content-Type' content='text/html;charset=utf-8')
+    link(rel='stylesheet' href='/stylesheets/reset.css' type='text/css' media='screen')
+    link(rel='stylesheet' href='/stylesheets/main.css' type='text/css' media='screen')
+    link(rel='stylesheet' href='/stylesheets/tooltipster.css' type='text/css' media='screen')
+    link(rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 900px)' href='/stylesheets/medium.css')
+    link(rel='stylesheet' media='screen and (min-width: 480px) and (max-width: 700px)' href='/stylesheets/small.css')
+    link(rel='stylesheet' media='screen and (max-width: 479px)' href='/stylesheets/narrow.css')
+
+    //- Set the viewport width to device width for mobile
+    meta(name='viewport' content='width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi')
+    meta(name='apple-mobile-web-app-capable' content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style' content='black')
+    meta(name='description' content="Error page")
+
+    title= sitename
+
+  body(class="error-body")
+    block content
