@@ -54,7 +54,7 @@ router.get('/contact', (req, res) => {
 
 router.get('/robots.txt', function (req, res) {
   res.type('text/plain');
-  res.send("User-agent: *\nDisallow: ");
+  res.send("User-agent: *\nDisallow: \nSitemap: http://www.konspiredesign.com/sitemap/sitemap.xml");
 });
 
 router.get('/index.php', (req, res) => { res.redirect(301, '/'); });
