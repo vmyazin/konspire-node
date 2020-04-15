@@ -52,8 +52,12 @@ router.get('/contact', (req, res) => {
 });
 
 router.get('/index.php', (req, res) => { res.redirect(301, '/'); });
+router.get('/a/', (req, res) => { res.redirect(301, '/'); });
 router.get('/about.php', (req, res) => { res.redirect(301, '/about'); });
+router.get('/*/about.php', (req, res) => { res.redirect(301, '/about'); });
 router.get('/portfolio.php', (req, res) => { res.redirect(301, '/portfolio'); });
+router.get('/*/portfolio.php', (req, res) => { res.redirect(301, '/portfolio'); });
 router.get('/contact.php', (req, res) => { res.redirect(301, '/contact'); });
+router.get('/*/contact.php', (req, res) => { res.redirect(301, '/contact'); });
 
 module.exports = router;
