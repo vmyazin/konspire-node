@@ -13,9 +13,12 @@ html
     meta(name='viewport' content='width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi')
     meta(name='apple-mobile-web-app-capable' content='yes')
     meta(name='apple-mobile-web-app-status-bar-style' content='black')
+    meta(name='description' content=config.pages[body_class].description)
 
-    //- title {{global.site_title}} &ndash; {{page_settings.title}}
-    title= title
+    if config.pages[body_class].page_title === undefined
+      title= sitename
+    else
+      title= sitename + ' - ' + config.pages[body_class].page_title
 
   body(class=body_class+"-body")
     block content

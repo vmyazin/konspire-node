@@ -1,0 +1,21 @@
+{
+  "sitename": "Konspire Design",
+  "description": "A small design agency that work with UX, Interface Design, Website Design, Marketing",
+  "pages": {
+    "home": {
+      "description": "A small design agency that work with UX, Interface Design, Website Design, Marketing"
+    },
+    "about": {
+      "page_title": "About",
+      "description": "Vasily Myazin is at the helm of Konspire Design. Over 15 years of experience working with corporations and small businesses."
+    },
+    "portfolio": {
+      "page_title": "Portfolio",
+      "description": "The agency has a range of design solutions demonstrated here. Ecommerce, personal sites, interface enhancements."
+    },
+    "contact": {
+      "page_title": "Contact",
+      "description": "Contact Vasily Myazin to discuss the design and user experience needs for your business."
+    }
+  }
+}

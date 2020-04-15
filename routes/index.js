@@ -12,33 +12,43 @@ async function getFlickrData() {
 }
 
 router.get('/', (req, res, next) => {
+  const config = req.config;
   res.render('index', {
     title: 'Konspire Design',
-    body_class: "home"
+    body_class: "home",
+    config: config
   });
 });
 
 router.get('/about', async (req, res, next) => {
   const data = await getFlickrData();
+  const config = req.config;
 
   res.render('about', {
     title: 'About Konspire Design',
     body_class: "about",
-    data: data
+    data: data,
+    config: config
   });
 });
 
 router.get('/portfolio', (req, res) => {
+  const config = req.config;
+
   res.render('portfolio', {
     title: 'Portfolio Konspire Design',
-    body_class: "portfolio"
+    body_class: "portfolio",
+    config: config
   });
 });
 
 router.get('/contact', (req, res) => {
+  const config = req.config;
+
   res.render('contact', {
     title: 'Contact Konspire Design',
-    body_class: "contact"
+    body_class: "contact",
+    config: config
   });
 });
 
