@@ -62,9 +62,9 @@ $(function() {
         sleep: 5,
         fade: 0.5
       }, [
-        { src: '/images/photo-sunsetla.jpg' },
-        { src: '/images/photo-les.jpg' },
-        { src: '/images/photo-topanga.jpg' }
+        { src: '/images/photo-sunsetla.jpg', alt: 'Sunset in LA' },
+        { src: '/images/photo-les.jpg', alt: 'Lower East Side Building' },
+        { src: '/images/photo-topanga.jpg', alt: 'Topanga Canyon View' }
       ]);
     }
   }
