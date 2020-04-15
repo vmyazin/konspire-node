@@ -52,6 +52,11 @@ router.get('/contact', (req, res) => {
   });
 });
 
+router.get('/robots.txt', function (req, res) {
+  res.type('text/plain');
+  res.send("User-agent: *\nDisallow: ");
+});
+
 router.get('/index.php', (req, res) => { res.redirect(301, '/'); });
 router.get('/a/', (req, res) => { res.redirect(301, '/'); });
 router.get('/about.php', (req, res) => { res.redirect(301, '/about'); });
