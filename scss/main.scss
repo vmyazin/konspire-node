@@ -86,6 +86,7 @@ abbr {
 .generic-article {
   width: 610px;
   margin: 0 30px;
+  padding: 30px 0;
 }
 .polaroid-a {
   border: 6px white solid;
@@ -135,27 +136,31 @@ abbr {
   padding-left: 20px;
   overflow: hidden;
   float: left;
+
+  li {
+    float: left;
+    background: url('/images/bg-nav-spr-mid.png') no-repeat right top;
+    padding-right: 20px;
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      font: 1.7em 'Yanone Kaffeesatz', arial, serif;
+      background: url('/images/bg-nav.png') repeat-x;
+      line-height: .65;
+      height: 20px;
+      padding: 8px 12px 8px 2px;
+      text-shadow:0 1px 0 rgba(0,0,0, 0.5);
+
+      &:hover {
+        color: #160e2a;
+        text-shadow: 0 -1px 0 rgba(255,255,255, 0.5);
+      }
+    }
+  }
 }
-.main-nav ul li {
-  float: left;
-  background: url('/images/bg-nav-spr-mid.png') no-repeat right top;
-  padding-right: 20px;
-}
-.main-nav ul li a {
-  display: block;
-  text-decoration: none;
-  color: #fff;
-  font: 1.7em 'Yanone Kaffeesatz', arial, serif;
-  background: url('/images/bg-nav.png') repeat-x;
-  line-height: .65;
-  height: 20px;
-  padding: 8px 12px 8px 2px;
-  text-shadow:0 1px 0 rgba(0,0,0, 0.5);
-}
-.main-nav ul li a:hover {
-  color: #160e2a;
-  text-shadow: 0 -1px 0 rgba(255,255,255, 0.5);
-}
+
 #nav-helper {
   background: url('/images/bg-nav.png') repeat-x;
   float: left;
@@ -384,11 +389,18 @@ body .main-header ul li a.suppress {
   margin: 0 auto;
   position: relative;
   background: #fff;
+  min-height: 400px;
+
+  h2 {
+    color: #507c66;
+    font-size: 1.5em;
+  }
+
+  aside {
+    float: left;
+  }
 }
-.content h2 {
-  color: #507c66;
-  font-size: 1.5em;
-}
+
 #main-left h2 {
   background: rgba(255, 253, 201, 0.7);
   line-height: 28px;
@@ -396,9 +408,7 @@ body .main-header ul li a.suppress {
   padding: 5px 10px 5px 43px;
   box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.2);
 }
-.content aside {
-  float: left;
-}
+
 #main-left {
   margin: 10px 325px 0 0;
   max-width: 280px;
