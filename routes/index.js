@@ -18,15 +18,6 @@ router.get('/', (req, res, next) => {
   });
 });
 
-function getFlickrData2() {
-  request.get("https://api.flickr.com/services/feeds/photoset.gne?set=72157623352223751&nsid=33129098@N06&lang=en-us&format=json&nojsoncallback=1", (err, response, body) => {
-    if (err) {
-      return next(err);
-    }
-    return JSON.parse(body); 
-  });
-}
-
 router.get('/about', async (req, res, next) => {
   const data = await getFlickrData();
 
