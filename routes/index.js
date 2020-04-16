@@ -66,12 +66,17 @@ router.get('/*/portfolio.php', (req, res) => { res.redirect(301, '/portfolio'); 
 router.get('/contact.php', (req, res) => { res.redirect(301, '/contact'); });
 router.get('/*/contact.php', (req, res) => { res.redirect(301, '/contact'); });
 
-router.get('/*', function(req, res, next) {
-  if (req.headers.host.match(/^www/) !== null ) {
-    res.redirect('http://' + req.headers.host.replace(/^www\./, '') + req.url);
-  } else {
-    next();     
-  }
-})
+// router.get('/*', function(req, res, next) {
+//   if (req.headers.host.match(/^www/) !== null ) {
+//     res.redirect('http://' + req.headers.host.replace(/^www\./, '') + req.url);
+//   } else {
+//     next();     
+//   }
+// })
+
+// router.get('*', function(req, res) {
+//   // next(createError(404));
+//   res.status(404).render('error');;
+// });
 
 module.exports = router;
