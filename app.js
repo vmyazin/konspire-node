@@ -9,7 +9,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
 const fs = require('fs');
-const sitedata = JSON.parse(fs.readFileSync('data/global.json', 'utf8'));
+const sitedata = JSON.parse(fs.readFileSync(__dirname + '/data/global.json', 'utf8'));
 
 const app = express();
 
