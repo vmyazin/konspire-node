@@ -1,9 +1,11 @@
-let express = require('express');
-let router = express.Router();
-const got = require('got');
+// routes/index.js
+
+import express from 'express';
+const router = express.Router();
 
 async function getFlickrData() {
   try {
+    const { default: got } = await import('got');
     const response = await got('https://api.flickr.com/services/feeds/photoset.gne?set=72157623352223751&nsid=33129098@N06&lang=en-us&format=json&nojsoncallback=1');
     return JSON.parse(response.body);
   } catch (error) {
@@ -16,7 +18,7 @@ router.get('/', (req, res, next) => {
   res.render('index', {
     title: 'Konspire Design',
     body_class: "home",
-    config: config
+    config: config,
   });
 });
 
@@ -79,4 +81,4 @@ router.get('/*/contact.php', (req, res) => { res.redirect(301, '/contact'); });
 //   res.status(404).render('error');;
 // });
 
-module.exports = router;
+export default router;

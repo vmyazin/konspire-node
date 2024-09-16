@@ -1,17 +1,31 @@
-const createError = require('http-errors');
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const sassMiddleware = require('node-sass-middleware');
+// app.js
 
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+import createError from 'http-errors';
+import express from 'express';
+import path from 'path';
+import cookieParser from 'cookie-parser';
+import logger from 'morgan';
+import sassMiddleware from 'sass-middleware';
+import { fileURLToPath } from 'url';
+import fs from 'fs';
+import indexRouter from './routes/index.js';
+import usersRouter from './routes/users.js';
 
-const fs = require('fs');
-const sitedata = JSON.parse(fs.readFileSync(__dirname + '/data/global.json', 'utf8'));
+// [Resolve __dirname for ES modules]
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const currentYear = new Date().getFullYear();
+
+// [Read JSON data using fs]
+const sitedata = JSON.parse(fs.readFileSync(path.join(__dirname, '/data/global.json'), 'utf8'));
 
 const app = express();
+
+app.use((req, res, next) => {
+  res.locals.currentYear = currentYear;
+  next();
+});
 
 app.locals = sitedata;
 
@@ -25,16 +39,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(
   sassMiddleware({
-    src: __dirname + '/scss', //where the sass files are
-    dest: __dirname + '/public/stylesheets', //where css should go
+    src: path.join(__dirname, 'scss'), // Path to your source .scss files
+    dest: path.join(__dirname, 'public/stylesheets'), // Where compiled .css files will be output
     debug: true,
-    indentedSyntax: false,
+    indentedSyntax: false, // false = .scss, true = .sass
     outputStyle: 'compressed',
-    prefix: '/stylesheets',
+    prefix: '/stylesheets', // This should match the URL prefix for your CSS
   })
 );
+
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Attach app.locals to req.config
 app.use(
   '/',
   function (req, res, next) {
@@ -63,7 +79,8 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
 app.listen(3000, () => {
   console.log(`Example app listening at http://localhost:3000`);
 });
+
+export default app;

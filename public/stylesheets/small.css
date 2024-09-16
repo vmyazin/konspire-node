@@ -1,1 +1,118 @@
-.hidden-sm{display:none !important}.header-wrapper{width:auto}.wrapper{width:auto}.content{width:auto}.content aside{float:none;margin:0}#main-left{max-width:1000px;min-height:0;margin-right:0}.content-wrapper{border:0;padding:0 15px 30px}.content-wrapper h2{margin:20px 0 1em;padding:5px 10px;text-align:center}#photo-slideshow{width:auto;padding-bottom:0}#photo-slideshow figure{width:auto}#portfolio-reel{width:auto;position:static;padding:0}#portfolio-reel ul li{float:left;width:50%;text-align:center}.portfolio-page aside{position:static;width:auto}#portfolio h2{float:left;margin-bottom:10px}.yellow-col{width:auto;position:static}.man{display:none}#about-konspire{position:static;width:auto}.generic-article{width:auto;margin:0 20px}#twitter-blurb{position:relative;margin:-70px 0 0 60px;top:auto}#flickr-feed{padding:0 15px}.album-wrapper ul{width:auto}.album-wrapper ul li{width:33%}.about-page #main-left{margin-top:0}#about{float:none}.album-wrapper ul{width:auto}
+/* 480px - 700px */
+.hidden-sm {
+  display: none !important;
+}
+
+.header-wrapper {
+  width: auto;
+}
+
+.wrapper {
+  width: auto;
+}
+
+.content {
+  width: auto;
+}
+
+.content aside {
+  float: none;
+  margin: 0;
+}
+
+#main-left {
+  max-width: 1000px;
+  min-height: 0;
+  margin-right: 0;
+}
+
+.content-wrapper {
+  border: 0;
+  padding: 0 15px 30px;
+}
+
+.content-wrapper h2 {
+  margin: 20px 0 1em;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+#photo-slideshow {
+  width: auto;
+  padding-bottom: 0;
+}
+
+#photo-slideshow figure {
+  width: auto;
+}
+
+#portfolio-reel {
+  width: auto;
+  position: static;
+  padding: 0;
+}
+
+#portfolio-reel ul li {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
+.portfolio-page aside {
+  position: static;
+  width: auto;
+}
+
+#portfolio h2 {
+  float: left;
+  margin-bottom: 10px;
+}
+
+.yellow-col {
+  width: auto;
+  position: static;
+}
+
+.man {
+  display: none;
+}
+
+#about-konspire {
+  position: static;
+  width: auto;
+}
+
+.generic-article {
+  width: auto;
+  margin: 0 20px;
+}
+
+#twitter-blurb {
+  position: relative;
+  margin: -70px 0 0 60px;
+  top: auto;
+}
+
+#flickr-feed {
+  padding: 0 15px;
+}
+
+.album-wrapper ul {
+  width: auto;
+}
+
+.album-wrapper ul li {
+  width: 33%;
+}
+
+.about-page #main-left {
+  margin-top: 0;
+}
+
+#about {
+  float: none;
+}
+
+.album-wrapper ul {
+  width: auto;
+}

@@ -1,1 +1,85 @@
-.hidden-md{display:none !important}.wrapper{width:auto}.wrapper .portfolio-page,.wrapper .about-page{margin-top:0}.short-desc article{padding-bottom:20px}.short-desc h3{padding-bottom:0}#photo-slideshow{width:auto;margin-top:0}#photo-slideshow figure{width:auto}.content{width:auto}.content aside{min-height:0;position:static}#main-left{width:50%;min-height:0;margin:0;max-width:1000px}#portfolio-reel{width:50%;padding:0;position:static;float:left}.yellow-col{position:static;width:auto}.yellow-col h4{padding:10px 30px}aside .inner{padding-left:30px;padding-right:30px}.generic-article{width:auto}#about-konspire{width:50%;position:static;float:left}.portfolio-page aside{width:auto}#portfolio-pieces{margin-bottom:20px}
+/* 701px - 900px */
+.hidden-md {
+  display: none !important;
+}
+
+.wrapper {
+  width: auto;
+}
+
+.wrapper .portfolio-page,
+.wrapper .about-page {
+  margin-top: 0;
+}
+
+.short-desc article {
+  padding-bottom: 20px;
+}
+
+.short-desc h3 {
+  padding-bottom: 0;
+}
+
+#photo-slideshow {
+  width: auto;
+  margin-top: 0;
+}
+
+#photo-slideshow figure {
+  width: auto;
+}
+
+.content {
+  width: auto;
+}
+
+.content aside {
+  min-height: 0;
+  position: static;
+}
+
+#main-left {
+  width: 50%;
+  min-height: 0;
+  margin: 0;
+  max-width: 1000px;
+}
+
+#portfolio-reel {
+  width: 50%;
+  padding: 0;
+  position: static;
+  float: left;
+}
+
+.yellow-col {
+  position: static;
+  width: auto;
+}
+
+.yellow-col h4 {
+  padding: 10px 30px;
+}
+
+aside .inner {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.generic-article {
+  width: auto;
+}
+
+#about-konspire {
+  width: 50%;
+  position: static;
+  float: left;
+}
+
+.portfolio-page aside {
+  width: auto;
+}
+
+#portfolio-pieces {
+  margin-bottom: 20px;
+}
