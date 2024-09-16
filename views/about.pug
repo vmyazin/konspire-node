@@ -31,21 +31,20 @@ block content
 
       </article>          
 
-      <aside id="flickr-feed">
+      aside#flickr-feed
+        h2
+          span Flick
+          b r Feed
+        a#flickr-rss(href="http://api.flickr.com/services/feeds/photoset.gne?set=72157623352223751&nsid=33129098@N06&lang=en-us")
+          img(src="/images/rss.png", width="20", height="20", alt="Konspire Design Flickr RSS Feed")
+        
+        .album-wrapper
+          ul
+            each item in items
+              li
+                a(href=item.link)
+                  img(src=item.media.m, alt="Flickr Image", title="Added on")
 
-        <h2><span>Flick<b>r</b></span> Feed</h2>
-        <a id="flickr-rss" href="http://api.flickr.com/services/feeds/photoset.gne?set=72157623352223751&nsid=33129098@N06&lang=en-us"><img src="/images/rss.png" width="20" height="20" alt="Konspire Design Flickr RSS Feed"></a>
-        <div class="album-wrapper">
-          <ul>
-            //- {{#each items}}
-              <li>
-                <a href="{{link}}"><img src="{{media.m}}" title="Added on "></a>
-              </li>
-            //- {{/each}}
-          </ul>
-        </div>
-
-      </aside>
       <div class="clearfix"></div>
 
     </section> <!-- /content -->

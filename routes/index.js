@@ -29,10 +29,11 @@ router.get('/about', async (req, res, next) => {
   res.render('about', {
     title: 'About Konspire Design',
     body_class: "about",
-    data: data,
+    items: data.items,
     config: config
   });
 });
+
 
 router.get('/portfolio', (req, res) => {
   const config = req.config;
