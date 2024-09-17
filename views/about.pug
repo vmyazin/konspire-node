@@ -7,40 +7,38 @@ block content
   
   <div class="wrapper">
 
-    <section class="content about-page" id="content">
+    <section id="about" class="content about-page" id="content">
 
-      <article id="about" class="generic-article">
+      <aside id="main-left" class="flex-1">
+        <img id="photo-vasily" class="polaroid-a" src="/images/vasily-02.jpg" width="202" height="232" alt="Vasily">
+        <figure id="twitter-blurb"><a href="http://twitter.com/rapidsystemshub" title="Follow Vasily on Twitter">You should <span>follow me</span> on Twitter!</a></figure>
+      </aside>
 
-        <aside id="main-left">
-          <img id="photo-vasily" class="polaroid-a" src="/images/vasily-02.jpg" width="202" height="232" alt="Vasily">
-          <figure id="twitter-blurb"><a href="http://twitter.com/vasily_m" title="Follow Vasily on Twitter">You should <span>follow me</span> on Twitter!</a></figure>
-        </aside>
+      <section id="about-konspire">
 
-        <section id="about-konspire">
-  
-          <h1>About Konspire Design</h1>
-          <p>Our micro-agency is made out of highly skilled and proficient web developers and designers who aim to serve the clients with an engaging online presence that speaks their business at one glance! Our goals are simple - to visualize, to execute and to captivate!</p>
-          <p>We always strive to surpass client's expectations, help them communicate their business ideas effectively to their target audience via an effective web-branding and marketing and provide them creative and marketing consultations from head to toe to ensure that the end-result does justice for what they deserve!</p>
-  
-          <h2>Vasily Myazin, The Founder</h2>
-          <p>Vasily Myazin, the founder of Konspire Design, started working with graphic design and web development in Russia back in 1996. Inspired by the European and American designers and developers, he quickly got a grasp on web technologies that led him to forming his own agency.</p>
-          <p>Vasily's background is in print. Raised in the family of journalists and writers, he was exposed to print houses, typesetting, and desktop publishing systems since the early age. In the mid '90s, when the web started growing, Vasily quickly became passionate about all things online.</p>
-          <p>These days he specializes in user interface design and user experience as a whole. Vasily enjoys brain-storming, conceptualizing, wireframing, prototyping, and adding polish to the final product. He's got the experience in producing web applications, most of them for usage by internal teams of enterprise companies (Sony is one of them).</p>
-  
-        </section>
+        <h1>About Konspire Design</h1>
+        <p>My micro-agency is made out of highly skilled and proficient web developers and designers who aim to serve the clients with an engaging online presence that speaks their business at one glance! My goals are simple - to visualize, to execute and to captivate!</p>
+        <p>I always strive to surpass client's expectations, help them communicate their business ideas effectively to their target audience via an effective web-branding and marketing and provide them creative and marketing consultations from head to toe to ensure that the end-result does justice for what they deserve!</p>
 
-      </article>          
+        <h2>Vasily Myazin, The Founder</h2>
+        <p>Vasily Myazin, the founder of Konspire Design, started working with graphic design and web development in Eastern Europe back in 1996. Inspired by the European and American designers and developers, he quickly got a grasp on web technologies that led him to forming his own agency.</p>
+        <p>Vasily's background is in print. Raised in the family of journalists and writers, he was exposed to print houses, typesetting, and desktop publishing systems since the early age. In the mid '90s, when the web started growing, Vasily quickly became passionate about all things online.</p>
+        <p>These days he specializes in user interface design and user experience as a whole. Vasily enjoys brain-storming, conceptualizing, wireframing, prototyping, and adding polish to the final product. He's got the experience in producing web applications, most of them for usage by internal teams of enterprise companies (Sony is one of them).</p>
 
-      aside#flickr-feed
+      </section>
+
+
+      aside#flickr-feed.flex-1
         h2
           span Flick
           b r Feed
-        a#flickr-rss(href="http://api.flickr.com/services/feeds/photoset.gne?set=72157623352223751&nsid=33129098@N06&lang=en-us")
-          img(src="/images/rss.png", width="20", height="20", alt="Konspire Design Flickr RSS Feed")
+          a#flickr-rss(href="http://api.flickr.com/services/feeds/photoset.gne?set=72157623352223751&nsid=33129098@N06&lang=en-us")
+            | &nbsp;
+            img(src="/images/rss.png", width="20", height="20", alt="Konspire Design Flickr RSS Feed")
         
         .album-wrapper
           ul
-            each item in items
+            each item in items.slice(0, 12)
               li
                 a(href=item.link)
                   img(src=item.media.m, alt="Flickr Image", title="Added on")

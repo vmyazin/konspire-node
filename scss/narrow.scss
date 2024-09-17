@@ -15,11 +15,11 @@
   min-height: 0;
 }
 #about {
-  float: none;
+  padding: 0 20px;
 }
+
 #about-konspire {
-  position: static;
-  width: auto;
+  flex: auto;
 }
 .generic-article {
   width: auto;
@@ -31,14 +31,14 @@
   top: auto;
 }
 #flickr-feed {
-  padding: 0 15px;
   margin-left: 0;
+  max-width: 1000px;
 }
 .album-wrapper ul {
   width: auto;
 }
 .album-wrapper ul li {
-  width: 33%;
+  flex-basis: calc(33% - 10px);
 }
 
 .wrapper {

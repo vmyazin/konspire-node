@@ -437,9 +437,6 @@ body .main-header ul li a.suppress {
   color: #507c66;
   font-size: 1.5em;
 }
-.content aside {
-  float: left;
-}
 
 #main-left h2 {
   background: rgba(255, 253, 201, 0.7);
@@ -450,7 +447,7 @@ body .main-header ul li a.suppress {
 }
 
 #main-left {
-  margin: 10px 325px 0 0;
+  margin: 10px 0 0 0;
   max-width: 280px;
   min-height: 555px;
 }
@@ -723,34 +720,31 @@ aside .inner {
 }
 
 /* About */
-.wrapper .about-page {
-  overflow: hidden;
-  background-color: #fff;
-  background-image: url("/images/bg-stamp.png"), url("/images/bg-grungy.png"), url("/images/bg-stain.jpg");
-  background-position: top left, top right, bottom right;
-  background-repeat: no-repeat;
+#about-konspire {
+  flex: 1;
 }
-
 #about-konspire h1 {
   color: #596391;
   font-size: 1.7em;
 }
-
 #about-konspire h1,
 #about-konspire h2 {
   margin-bottom: 0.3em;
 }
 
-#about-konspire {
-  position: absolute;
-  width: 350px;
-  left: 310px;
+.flex-1 {
+  flex: 1;
 }
 
-#about {
-  float: left;
+.about-page {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: #fff;
+  background-image: url("/images/bg-stamp.png"), url("/images/bg-grungy.png"), url("/images/bg-stain.jpg");
+  background-position: top left, top right, bottom right;
+  background-repeat: no-repeat;
 }
-
 .about-page #main-left {
   margin-top: 320px;
   position: relative;
@@ -760,6 +754,7 @@ aside .inner {
   -webkit-transform: rotate(-3deg);
   -moz-transform: rotate(-3deg);
   transform: rotate(-3deg);
+  min-width: 200px;
 }
 
 #twitter-blurb {
@@ -792,14 +787,14 @@ aside .inner {
 }
 
 #flickr-feed {
-  margin: 0 0 0 40px;
-  position: relative;
+  margin: 0;
+  max-width: 220px;
 }
 
 #flickr-feed h2 {
   color: #78b9d2;
+  margin-bottom: 10px;
 }
-
 #flickr-feed h2 span {
   color: #00aeef;
 }
@@ -809,18 +804,24 @@ aside .inner {
 }
 
 .album-wrapper ul {
-  margin: 20px 20px 0 0;
-  width: 221px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: space-between;
 }
 .album-wrapper ul li {
-  float: left;
-  width: 50%;
+  flex-basis: calc(50% - 10px);
   box-sizing: border-box;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
 }
 .album-wrapper ul li img {
   border: 3px solid white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
 }
 
 .album-wrapper a {
@@ -829,9 +830,7 @@ aside .inner {
 }
 
 #flickr-rss {
-  position: absolute;
-  right: 20px;
-  top: 5px;
+  text-decoration: none;
 }
 
 /* Contact */

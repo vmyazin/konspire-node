@@ -396,10 +396,6 @@ body .main-header ul li a.suppress {
     color: #507c66;
     font-size: 1.5em;
   }
-
-  aside {
-    float: left;
-  }
 }
 
 #main-left h2 {
@@ -411,7 +407,7 @@ body .main-header ul li a.suppress {
 }
 
 #main-left {
-  margin: 10px 325px 0 0;
+  margin: 10px 0 0 0;
   max-width: 280px;
   min-height: 555px;
 }
@@ -647,40 +643,44 @@ aside .inner {
 }
 /* About */
 
-.wrapper .about-page {
-  overflow: hidden;
+#about-konspire {
+  flex: 1;
+
+  h1 {
+    color: #596391;
+    font-size: 1.7em;
+  }
+  h1,
+  h2 {
+    margin-bottom: .3em;
+  }  
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.about-page {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   background-color: #fff;
   background-image: url('/images/bg-stamp.png'), url('/images/bg-grungy.png'), url('/images/bg-stain.jpg');
   background-position: top left, top right, bottom right;
   background-repeat: no-repeat;
-  
-}
-#about-konspire h1 {
-  color: #596391;
-  font-size: 1.7em;
-}
-#about-konspire h1,
-#about-konspire h2 {
-  margin-bottom: .3em;
-}
 
-#about-konspire {
-  position: absolute;
-  width: 350px;
-  left: 310px;
-}
-#about {
-  float: left;
-}
-.about-page #main-left {
-  margin-top: 320px;
-  position: relative;
+  #main-left {
+    margin-top: 320px;
+    position: relative;
+  }
 }
 #photo-vasily {
   -webkit-transform: rotate(-3deg);
   -moz-transform: rotate(-3deg);
   transform: rotate(-3deg);
+  min-width: 200px;
 }
+
 #twitter-blurb {
   background: url('/images/twit-bubble.png') no-repeat;
   width: 90px;
@@ -707,33 +707,43 @@ aside .inner {
   padding:3px 4px 0;
 }
 #flickr-feed {
-  margin: 0 0 0 40px;
-  position: relative;
+  margin: 0;
+  max-width: 220px;
 }
 
 #flickr-feed h2 {
   color: #78b9d2;
-}
-#flickr-feed h2 span {
-  color: #00aeef;
+  margin-bottom: 10px;
+
+  span {
+    color: #00aeef;
+  }
 }
 #flickr-feed h2 span b {
   color: #ff00ff;
 }
 
-.album-wrapper ul {
-  margin: 20px 20px 0 0;
-  width: 221px;
+.album-wrapper {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: space-between;
 
-  li {
-    float: left;
-    width: 50%;
-    box-sizing: border-box;
-    text-align: center;
+    li {
+      flex-basis: calc(50% - 10px);
+      box-sizing: border-box;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 5px;
 
-    img {
-      border: 3px solid white;
-      box-shadow: 0px 0px 10px rgba(0,0,0,.4);
+      img {
+        border: 3px solid white;
+        box-shadow: 0px 0px 10px rgba(0,0,0,.4);
+        box-sizing: border-box;
+      }
     }
   }
 }
@@ -743,9 +753,7 @@ aside .inner {
   margin-bottom: 20px;
 }
 #flickr-rss {
-  position: absolute;
-  right: 20px;
-  top: 5px;
+  text-decoration: none;
 }
 
 /* Contact */
