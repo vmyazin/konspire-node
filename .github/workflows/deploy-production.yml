@@ -27,12 +27,19 @@ jobs:
             --exclude={'.git','.github','node_modules','.env','*.log'} \
             ./ ${{ env.DEPLOY_TO }}/tmp/
           
-          # Create necessary directories and deploy
+          # Update code and deploy
           ssh ${DEPLOY_TO%:*} "\
-            cd ${DEPLOY_TO#*:}/tmp && \
+            cd ${DEPLOY_TO#*:} && \
+            if [ ! -d '.git' ]; then \
+              git clone https://github.com/vmyazin/konspire-node.git . && \
+              git checkout master; \
+            else \
+              git pull origin master; \
+            fi && \
+            cd tmp && \
+            npm install && \
             npm ci --production && \
-            mkdir -p ../current/tmp && \
-            touch ../current/tmp/restart.txt && \
+            touch tmp/restart.txt && \
             cd .. && \
             rm -rf current && \
             mv tmp current"
