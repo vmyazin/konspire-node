@@ -20,22 +20,18 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
           if_key_exists: replace
-      
-      # Add debug steps
-      - name: Debug SSH Connection
-        run: |
-          eval $(ssh-agent -s)
-          ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
-          ssh -v -o StrictHostKeyChecking=no apprunner@konspiredesign.com 'pwd'
-
+          
       - name: Deploy
         run: |
-          rsync -e "ssh -v" -avz --delete \
+          rsync -avz --delete \
             --exclude={'.git','.github','node_modules','.env','*.log'} \
             ./ ${{ env.DEPLOY_TO }}/tmp/
+          
+          # Create necessary directories and deploy
           ssh ${DEPLOY_TO%:*} "\
             cd ${DEPLOY_TO#*:}/tmp && \
             npm ci --production && \
+            mkdir -p ../current/tmp && \
             touch ../current/tmp/restart.txt && \
             cd .. && \
             rm -rf current && \
