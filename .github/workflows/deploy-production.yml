@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '20'
           
       - name: Install dependencies
         run: npm ci
@@ -35,17 +35,13 @@ jobs:
             --exclude={'.git','.github','node_modules','.env','*.log'} \
             ./ ${{ env.DEPLOY_TO }}/tmp/
           
-          # Create necessary directories, pull latest code, and deploy
+          # Install dependencies and move to current
           ssh ${DEPLOY_TO%:*} "\
             cd ${DEPLOY_TO#*:}/tmp && \
-            git init && \
-            git remote add origin https://github.com/vmyazin/konspire-node.git && \
-            git fetch --depth 1 origin master && \
-            git checkout master && \
             npm install && \
             npm ci --production && \
-            mkdir -p ../current/tmp && \
-            touch ../current/tmp/restart.txt && \
+            mkdir -p tmp && \
+            touch tmp/restart.txt && \
             cd .. && \
             rm -rf current && \
             mv tmp current"
