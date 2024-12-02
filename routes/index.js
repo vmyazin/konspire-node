@@ -1,6 +1,6 @@
 // routes/index.js
 
-import express from 'express';
+const express = require('express');
 const router = express.Router();
 
 async function getFlickrData() {
@@ -82,4 +82,4 @@ router.get('/*/contact.php', (req, res) => { res.redirect(301, '/contact'); });
 //   res.status(404).render('error');;
 // });
 
-export default router;
+module.exports = router;

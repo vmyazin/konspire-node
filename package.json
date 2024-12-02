@@ -2,7 +2,6 @@
   "name": "konspire-express",
   "version": "2.0.9",
   "private": true,
-  "type": "module",
   "scripts": {
     "build:sass": "sass --no-source-map scss:public/stylesheets",
     "start": "npm run build:sass && node ./bin/www",

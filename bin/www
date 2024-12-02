@@ -1,16 +1,12 @@
 #!/usr/bin/env node
 
-// bin/www
-
 /**
  * Module dependencies.
  */
 
-import app from '../app.js';
-import debugLib from 'debug';
-import http from 'http';
-
-const debug = debugLib('konspire-express:server');
+const app = require('../app');
+const debug = require('debug')('konspire-express:server');
+const http = require('http');
 
 /**
  * Get port from environment and store in Express.

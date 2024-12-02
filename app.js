@@ -1,23 +1,20 @@
 // app.js
 
-import createError from 'http-errors';
-import express from 'express';
-import path from 'path';
-import cookieParser from 'cookie-parser';
-import logger from 'morgan';
-import sassMiddleware from 'sass-middleware';
-import { fileURLToPath } from 'url';
-import fs from 'fs';
-import indexRouter from './routes/index.js';
-import usersRouter from './routes/users.js';
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const sassMiddleware = require('sass-middleware');
+const fs = require('fs');
 
-// [Resolve __dirname for ES modules]
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Import routes
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 
 const currentYear = new Date().getFullYear();
 
-// [Read JSON data using fs]
+// Read JSON data
 const sitedata = JSON.parse(fs.readFileSync(path.join(__dirname, '/data/global.json'), 'utf8'));
 
 const app = express();
@@ -39,12 +36,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(
   sassMiddleware({
-    src: path.join(__dirname, 'scss'), // Path to your source .scss files
-    dest: path.join(__dirname, 'public/stylesheets'), // Where compiled .css files will be output
+    src: path.join(__dirname, 'scss'),
+    dest: path.join(__dirname, 'public/stylesheets'),
     debug: true,
-    indentedSyntax: false, // false = .scss, true = .sass
+    indentedSyntax: false,
     outputStyle: 'compressed',
-    prefix: '/stylesheets', // This should match the URL prefix for your CSS
+    prefix: '/stylesheets',
   })
 );
 
@@ -79,8 +76,4 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
-app.listen(3000, () => {
-  console.log(`Example app listening at http://localhost:3000`);
-});
-
-export default app;
+module.exports = app;
